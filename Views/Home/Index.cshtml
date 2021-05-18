@@ -1,0 +1,686 @@
+﻿@*@model Car_delearship.Models.ViewModel.VehicleViewModel*@
+
+@model cloudscribe.Pagination.Models.PagedResult<Car_delearship.Models.VehicleModels.Vehicle>
+
+
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.pageNumber = Model.PageNumber;
+    ViewBag.totalItem = Model.TotalItems;
+    ViewBag.pageSize = Model.PageSize;
+
+}
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@ViewData["Title"] - Car_delearship</title>
+@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />*@
+
+
+<!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+@*<link rel="stylesheet" href="~/style/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/style/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link rel="stylesheet" href="~/style/css/lightbox.min.css" />*@
+
+
+<!-- Slick -->
+@*<link rel="stylesheet" type="text/css" href="~/style/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/style/slick/slick-theme.css" />
+
+
+<link rel="stylesheet" href="~/Test/css/lightslider.css" /*@>
+
+<style>
+    body {
+        max-width: 40000px;
+    }
+</style>
+<link href="~/style/css/StyleSheet.css" rel="stylesheet" />
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+
+    @@media screen and (min-device-width: 768px) {
+        .standardContainer.filterContainer {
+            /*margin: 13% 5% !important;*/
+        }
+    }
+
+
+
+    @@media screen and (max-width: 979px) and (min-width: 640px) {
+        .notice {
+            background: cornflowerblue;
+            position: fixed;
+            top: 65px !important;
+            color: #fff;
+            height: 26px;
+            right: -1284px;
+            width: 1500px;
+            line-height: 25px;
+            padding-left: 15px;
+            font-size: 17px;
+            border-bottom-left-radius: 15px;
+            box-shadow: -1px 1px 5px black;
+        }
+    }
+
+    .fixed_notice {
+        position: fixed;
+        top: 100px;
+        z-index: 99995;
+        left: 50%;
+        margin-left: -480px;
+        height: auto
+    }
+
+    .notice {
+        background: cornflowerblue;
+        position: absolute;
+        top: 0;
+        color: #fff;
+        height: 26px;
+        right: -1284px;
+        width: 1500px;
+        line-height: 25px;
+        padding-left: 15px;
+        font-size: 17px;
+        border-bottom-left-radius: 15px;
+        box-shadow: -1px 1px 5px black;
+    }
+    /*        @@media screen and (min-width:0) and (max-width:979px) {
+    .filterContainer {
+        width:96% !important;
+        padding:3% 2%;
+        margin-left:0;
+        left:0
+    }*/
+    /*.standardContainer {
+        width:100%
+    }*/
+    .fixed_notice {
+        left: auto;
+        margin-left: 0
+    }
+
+    }
+
+    .fixed_notice {
+        top: 60px
+    }
+
+    .notice {
+        right: -1352px;
+        font-size: 12px;
+        top: -13px;
+        line-height: 49px
+    }
+
+    .notice {
+        background: cornflowerblue;
+        position: fixed;
+        top: 101px;
+        color: #fff;
+        height: 26px;
+        right: -1284px;
+        width: 1500px;
+        line-height: 25px;
+        padding-left: 15px;
+        font-size: 17px;
+        border-bottom-left-radius: 15px;
+        box-shadow: -1px 1px 5px black;
+    }
+
+    @@media screen and (max-width: 768px) {
+        .notice {
+            right: -1352px;
+            font-size: 10px;
+            top: 0px !Important;
+            line-height: 34px;
+        }
+    }
+</style>
+
+
+
+<style>
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(51,51,51,0.7);
+        z-index: 10;
+    }
+
+    #header {
+        width: 100%;
+        background: url(yourimage);
+    }
+
+    #headerContent {
+        margin: 0 auto;
+        width: 960px;
+    }
+</style>
+@*<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link rel="stylesheet" href="css/lightbox.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<script type="text/javascript" src="js/lightbox-plus-jquery.min.js"></script>
+<script src="js/all.js"></script>*@
+
+
+<div class="site_menu">
+    <div class="standardContainer">
+        <div class="main_logo"><a href="https://www.lisautosales.co.za/"><span class="helper"></span><img src="images/Colorlogo.jpg" alt="Lis Auto Sales" style="height: 95px;min-width: 45px" /></a></div>
+
+
+
+        <nav class="navbar navbar-expand-lg px-3" id="navBar" style="background:#000000;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
+
+                <span class="navbar-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="myNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active" style="background-color:cornflowerblue ">
+                        <a asp-controller="Home" asp-action="Index" style="margin-bottom: 37.3px; " class="nav-link"><span>Home</span></a>
+                    </li>
+                    <li class="nav-item active" style="background-color:white ">
+                        <a asp-controller="Home" asp-action="Showrooom" class="nav-link">Show room</a>
+                    </li>
+                    <li class="nav-item active" style="background-color:white ">
+                        <a href="index.php" class="nav-link">Finance</a>
+                    </li>
+                    <li class="nav-item" style="background-color:white ">
+                        <a href="#contact" class="nav-link">Contact us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        @*<div class="menu_button mobile active"></div>
+        <div class="menu-main-menu-container">
+            <ul id="main_menu" class="mainest_menu">
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/"><span class="helper"></span>Home</a>
+                    </li>
+                    <li class="main_menu_item active_li">
+                        <a class=" active_menu" href="https://www.theautoagents.co.za/showroom/"><span class="helper"></span>Showroom</a>
+                    </li>
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/finance/"><span class="helper"></span>Finance</a>
+                    </li>
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/contact-us/"><span class="helper"></span>Contact Us</a>
+                    </li>
+                </ul>
+        </div>*@
+    </div>
+</div>
+
+<!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3" style=" min-height: 80px;">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Lis Auto Sales</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="float: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+            <partial name="_LoginPartial" />
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" style="background-color:antiquewhite">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Show room</a>
+                </li>
+                <li class="nav-item" s>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Finance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>-->
+
+<div style="position: relative; width:100%; float:right; ">
+    <header class="header" id="header" style="float:right; ">
+        <div class="fullScreen" style=" max-width: 2050px;">
+            <div class="row height-max align-items-center">
+                <div class="col col-md-9 ml-auto text-right pr-5">
+                    <h5 class="title-heading d-inline-block p-2 text-uppercase">Get quality pre-owned car</h5>
+                    <h2 class="text-uppercase my-2 title">Don't dream it, Drive it</h2>
+                </div>
+
+            </div>
+        </div>
+
+
+    </header>
+</div>
+
+
+<div class="standardContainer fixed_notice" style="background-color: darkgoldenrod
+">
+    <div class="notice">
+        call us: 082 303 0943
+    </div>
+</div>
+
+<hr style="border-top: 1px solid darkgoldenrod;margin: 0.1em auto;">
+
+<section style=" margin: 0;
+    height: 100%;">
+
+    <!--<div class="row mb-5">
+        <div class="col d-flex-wrap text-uppercase justify-content-center">
+            <h1 class="font-weight-bold align-self-center mx-1">our </h1>
+            <h1 class="section-title--special mx-1">inventory</h1>
+        </div>
+    </div>-->
+    <!-- CARS -->
+    <!--<div class="row inventory-container">
+
+        @{ int i = 0;}
+        <div class="row">
+            @foreach (var item in Model.Data)
+            {
+
+                if (i % 4 == 0 && i != 0)
+                {
+                @:</div><div class="row mt-1">
+                }
+                i++;
+
+                <div class="col-md-4">
+                    <a href="https://www.w3schools.com">
+                        <img src="@item.image.Substring(item.image.IndexOf('V')).Replace(@"\\\","/")" class="card-img-top car-img" alt="Cinque Terre" height="260">
+                    </a>
+                    @*</div>
+
+                        <div class="col-md-8" style="background-color:white">*@
+                    <div class="card-body" style="background-color:white">
+                        <div class="car-info d-flex justify-content-between">
+
+                            <div class="car-text text-uppercase">
+                                <h6 style="color:black" class="font-weight-bold">@item.ModelName @item.makeName  @item.year</h6>
+                            </div>
+
+                            <h5 class="car-value align-self-center py-2 px-3" style="color:white">
+                                R
+                                <span class="car-price">@item.salesPrice</span>
+                            </h5>
+
+                        </div>
+                        @*<a href="descriptions/description_1.html" type="button" class="btn btn-info">View car</a>*@
+                    </div>
+                    <div style="background-color:white">
+                        <p>View here full details</p>
+                    </div>
+                    <div class="card-footer text-capitalize d-flex" style="background-color:white">
+                        <p style="color:black"><span><i class="fas fa-car"></i></span>@item.Style</p>&nbsp;&nbsp;&nbsp;
+                        <p style="color:black"><span><i class="fas fa-cogs"></i></span>@item.Transmission</p>&nbsp;&nbsp;&nbsp;
+                        <p style="color:black"><span><i class="fas fa-gas-pump"></i></span>@item.Mileage</p>&nbsp;&nbsp;
+                    </div>
+                    <div style="background-color:white">
+                        <hr style="border-top: 1px solid darkgoldenrod;margin: 0.1em auto;">
+                        <p>@item.description</p>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+        <br />
+        <br />
+
+
+
+
+
+
+
+
+
+        <!-- <div class="row" style="border: 3px solid cornflowerblue;">
+            <div class="col-md-4">
+                <a href="https://www.w3schools.com">
+                    <img src="images/Pjot/Pjot2.jpeg" class="card-img-top car-img" height="260">
+                </a>
+            </div>
+            <div class="col-md-8" style="background-color:white">
+                <div class="card-body">
+                    <div class="car-info d-flex justify-content-between">
+
+                        <div class="car-text text-uppercase">
+                            <h6 style="color:black" class="font-weight-bold">FORD MUSTANG 5.0</h6>
+                        </div>
+
+                        <h5 class="car-value align-self-center py-2 px-3" style="color:white">
+                            R
+                            <span class="car-price">449 900</span>
+                        </h5>
+                    </div>
+                    @*<a href="descriptions/description_1.html" type="button" class="btn btn-info">View car</a>*@
+                </div>
+                <div class="card-footer text-capitalize d-flex">
+                    <p style="color:black"><span><i class="fas fa-car"></i></span>Hatch back</p>&nbsp;&nbsp;&nbsp;
+                    <p style="color:black"><span><i class="fas fa-cogs"></i></span>automatic</p>&nbsp;&nbsp;&nbsp;
+                    <p style="color:black"><span><i class="fas fa-gas-pump"></i></span>91 738 Km</p>&nbsp;&nbsp;
+                </div>
+                <div>
+                    <hr style="border-top: 1px solid darkgoldenrod;margin: 0.1em auto;">
+                    <p>2017 Range Rover Sport HSE Dynamic SDV8: Full Service History - Land Rover, Low km only - 46 656 km, Balance of Land Rover Plan till 28th November 2021 or 100 000 km, Warranty till 27th October 2021 or 100 000km with a further 2 Years Unl</p>
+                </div>
+            </div>
+        </div>-->
+    <!--<div class="row">
+        <div class="column">
+            <img src="images/Pjot/Pjot2.jpeg" class="card-img-top car-img" height="260" href="descriptions/description_1.html">
+        </div>
+        <div class="column">
+            <div class="card-body">
+                <div class="car-info d-flex justify-content-between">
+
+                    <div class="car-text text-uppercase">
+                        <h6 class="font-weight-bold">FORD MUSTANG 5.01</h6>
+                    </div>
+
+                    <h5 class="car-value align-self-center py-2 px-3">
+                        R
+                        <span class="car-price">449 900</span>
+                    </h5>
+                </div>
+            </div>
+            <div class=" ">
+                <p><span><i class="fas fa-car"></i></span>Hatch back</p>
+                <p><span><i class="fas fa-cogs"></i></span>automatic</p>
+                <p><span><i class="fas fa-gas-pump"></i></span>91 738 Km</p>
+            </div>
+        </div>
+    </div>-->
+
+    <style>
+        .standardContainer {
+            height: auto !important;
+        }
+    </style>
+
+    <div class="standardContainer">
+        @{ int ii = 0;}
+        <div class="list-items">
+            <div class="list-item" id="test">
+                @foreach (var item in Model.Data)
+                {
+                    <div class="box">
+
+
+                        @if (ii % 4 == 0 && ii != 0)
+                        {
+                        @:</div><div class="box mt-1">
+
+
+
+
+                        }
+
+
+                        <div class="list-item-image">
+                            <div class="main_listing_image">
+                                <a href="@Url.Action("VehicleDetails", "Home", new { id = item.VehicleID })">
+                                    <img src="@item.image.Substring(item.image.IndexOf('V')).Replace(@"\\\","/")" alt="Maserati Levante" border="0" />
+                                </a>
+                            </div>
+
+                            <!--<div class="secondary_listing_images">
+                                <a href="https://www.theautoagents.co.za/showroom/maserati/levante/25928188">
+                                    <img src="https://img.autotrader.co.za/11309199" alt="Maserati Levante" border="0" />
+                                </a>
+                                <a href="https://www.theautoagents.co.za/showroom/maserati/levante/25928188">
+                                    <img src="https://img.autotrader.co.za/11309198" alt="Maserati Levante" border="0" />
+                                </a>
+                                <a href="https://www.theautoagents.co.za/showroom/maserati/levante/25928188">
+                                    <img src="https://img.autotrader.co.za/11309197" alt="Maserati Levante" border="0" />
+                                </a>
+                            </div>-->
+                        </div>
+
+                        <div class="list-item-content list_elements">
+
+                            <h5 style="float:left;">@item.year</h5><h4>R @item.salesPrice.ToString().Replace(@"/\B(?= (\d{ 3})+(? !\d))/ g", " ")</h4> <div class="clear spacer tiny_height_space full_width">&nbsp;</div>
+                            <h2><b>@item.makeName</b> @item.ModelName</h2>
+                            <div class="clear"></div>
+                            <div class="links_div">
+
+                                <div style="display:none">
+                                    @*<div id="form-lightbox-1374826386773__25928188" style="">
+                                            <div role="form" class="wpcf7" id="wpcf7-f3-o1" dir="ltr">
+                                                <div class="screen-reader-response"></div>
+                                                <form action="/showroom/#wpcf7-f3-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                                    <div style="display: none;">
+                                                        <input type="hidden" name="_wpcf7" value="3" />
+                                                        <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                                                        <input type="hidden" name="_wpcf7_locale" value="" />
+                                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3-o1" />
+                                                        <input type="hidden" name="_wpcf7_container_post" value="0" />
+                                                        <input type="hidden" name="g-recaptcha-response" value="" />> View Full Details
+                                                    </div>
+                                                    <p>
+                                                        Name<br />
+                                                        <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" /></span>
+                                                    </p>
+                                                    <p>
+                                                        Email<br />
+                                                        <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Preferred Email Address" /></span>
+                                                    </p>
+                                                    <p>
+                                                        Number<br />
+                                                        <span class="wpcf7-form-control-wrap tel-122"><input type="tel" name="tel-122" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Preferred Contact Number" /></span>
+                                                    </p>
+                                                    <p>
+                                                        Subject<br />
+                                                        <span class="wpcf7-form-control-wrap menu-116"><select name="menu-116" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="Vehicle Enquiry">Vehicle Enquiry</option><option value="Book a Test Drive">Book a Test Drive</option></select></span>
+                                                    </p>
+                                                    <p>
+                                                        Your Message<br />
+                                                        <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message..."></textarea></span>
+                                                    </p>
+
+                                                    <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+                                                    <p>&nbsp;</p>
+                                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                </form>
+                                            </div>
+                                        </div>*@
+                                </div>
+                                <script type="text/javascript">
+                                    var iFrame_1374826386773__25928188 = jQuery("#form-lightbox-1374826386773__25928188 iframe").attr("src");
+                                    jQuery(document).ready(function () {
+                                        jQuery(".fl_box-1374826386773__25928188").colorbox({
+                                            inline: true,
+                                            href: "#form-lightbox-1374826386773__25928188",
+                                            transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                                            onClosed: function () { jQuery("#form-lightbox-1374826386773__25928188 iframe").attr("src", iFrame_1374826386773__25928188); }
+                                        });
+                                    });
+                                </script>
+                                <script>
+                                    jQuery(document).ready(function () {
+                                        jQuery('#form-lightbox-1374826386773__25928188 input[name=vehicle_enquiry_id]').val('25928188');
+                                    });
+                                </script>
+                                <!--<a href="#">> Vehicle Enquiry</a>--><a href="@Url.Action("VehicleDetails", "Home", new { id = item.VehicleID })">> View Full Details</a>
+                            </div>
+                            <div class="clear small_space"></div>
+                            <p><p>
+                                @item.description
+                                <b><a href="https://www.theautoagents.co.za/showroom/maserati/levante/25928188/">...read more</a></b>
+                            </p></p>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+
+
+                    </div>
+                }
+
+            </div>
+
+
+        </div>
+        <cs-pager cs-paging-pagesize="@Model.PageSize"
+                  cs-paging-pagenumber="@Model.PageNumber"
+                  cs-paging-totalitems="@Model.TotalItems"
+                  cs-pagenumber-param="pagenumber"
+                  asp-action="Index"
+                  asp-controller="Home"
+                  cs-pager-li-current-class="page-item active"
+                  cs-pager-li-other-class="page-item"
+                  cs-pager-li-non-active-class="page-item disabled"
+                  cs-pager-link-current-class="page-link"
+                  cs-pager-link-other-class="page-link">
+
+        </cs-pager>
+
+    </div>
+
+
+
+
+
+</section>
+
+<section class="featured py-5" id="featured" style="background-color: black;">
+    <div class="container">
+
+        <div class="row mb-5">
+            <div class="col d-flex-wrap text-uppercase justify-content-center">
+                <h1 class="section-title--special mx-1">Contacts</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-lg-5 ml-auto" style="background-color:black">
+                <div class="p-4 mb-3" style="background-color:black">
+                    <p style="background-color:black" class="mb-0 font-weight-bold">Address</p>
+                    <p style="background-color:black" class="mb-4">288 Sefako Makgatho Drive,Sinoville, pretoria, 0182</p>
+
+                    <p style="background-color:black" class="mb-0 font-weight-bold">Phone</p>
+                    <p style="background-color:black" class="mb-4"><a href="#">+27 82 303 0943</a>
+
+                    <p style="background-color:black" class="mb-0 font-weight-bold">Email Address</p>
+                    <p style="background-color:black" class="mb-0"><a href="#">Liston@lisautosales.co.za</a></p>
+
+                </div>
+            </div>
+
+            <div class="col-10 mx-auto col-lg-6 featured-img align-self-center my-3">
+                <div class="img-container">
+                    <img src="images/Colorlogo.jpg" alt="featured cars" class="img-fluid featured-photo">
+                    <a href="#" class="featured-link">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
+@*<div class="row">
+    <div class="column">
+        <img src="images/Pjot/Pjot2.jpeg" class="card-img-top car-img" height="260">
+    </div>
+    <div class="column">
+
+        <div class="card-body">
+            <div class="car-info d-flex justify-content-between">
+
+                <div class="car-text text-uppercase">
+                    <h6 class="font-weight-bold">FORD MUSTANG 5.0</h6>
+                </div>
+
+                <h5 class="car-value align-self-center py-2 px-3">
+                    R
+                    <span class="car-price">449 900</span>
+                </h5>
+            </div>
+            <a href="descriptions/description_1.html" type="button" class="btn btn-info">View car</a>
+        </div>
+        <div class=" ">
+            <p><span><i class="fas fa-car"></i></span>Hatch back</p>
+            <p><span><i class="fas fa-cogs"></i></span>automatic</p>
+            <p><span><i class="fas fa-gas-pump"></i></span>91 738 Km</p>
+        </div>
+    </div>
+    </div>*@
+
+<!-- JQUERY -->
+
+<script src="js/jquery.min.js"></script>
+
+<!-- BOOTSTRAP JS -->
+
+<script src="js/bootstrap.min.js"></script>
+
+<!-- MAIN JS -->
+
+<script src="js/script.js"></script>
+
+
+<script>
+    $('#customers_table').DataTable({
+        stateSave: true,
+        "dom": '<"top"f>rt<"bottom"p><"clear">',
+        "lengthChange": true,
+        "pageLength": 4,
+        "order": [[1, "desc"]]
+    });
+</script>

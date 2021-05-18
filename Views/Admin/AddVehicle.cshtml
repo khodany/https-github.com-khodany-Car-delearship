@@ -1,0 +1,616 @@
+﻿@model Car_delearship.Models.ViewModel.AddEditVehicleViewModel
+@{
+    ViewData["Title"] = "AddVehicle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+  
+<style>
+    .file-uploader {
+        background-color: #dbefe9;
+        border-radius: 3px;
+        color: #242424;
+    }
+
+    .file-uploader__message-area {
+        font-size: 18px;
+        padding: 1em;
+        text-align: center;
+        color: #377a65;
+    }
+
+    .file-list {
+        background-color: white;
+        font-size: 16px;
+    }
+
+    .file-list__name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .file-list li {
+        height: 50px;
+        line-height: 50px;
+        margin-left: 0.5em;
+        border: none;
+        overflow: hidden;
+    }
+
+    .removal-button {
+        width: 20%;
+        border: none;
+        background-color: #d65d38;
+        color: white;
+    }
+
+        .removal-button::before {
+            content: "X";
+        }
+
+        .removal-button:focus {
+            outline: 0;
+        }
+
+    .file-chooser {
+        padding: 1em;
+        transition: background-color 1s, height 1s;
+    }
+
+        .file-chooser p {
+            font-size: 18px;
+            padding-top: 1em;
+        }
+
+    .file-uploader {
+        max-width: 400px;
+        height: auto;
+        margin: 2em auto;
+    }
+
+        .file-uploader * {
+            display: block;
+        }
+
+        .file-uploader input[type="submit"] {
+            margin-top: 2em;
+            float: right;
+        }
+
+    .file-list {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    .file-list__name {
+        max-width: 70%;
+        float: left;
+    }
+
+    .removal-button {
+        display: inline-block;
+        height: 100%;
+        float: right;
+    }
+
+    .file-chooser {
+        width: 90%;
+        margin: 0.5em auto;
+    }
+
+    .file-chooser__input {
+        margin: 0 auto;
+    }
+
+    .file-uploader__submit-button {
+        width: 100%;
+        border: none;
+        font-size: 1.5em;
+        padding: 1em;
+        background-color: #72bfa7;
+        color: white;
+    }
+
+        .file-uploader__submit-button:hover {
+            background-color: #a7d7c8;
+        }
+
+    .file-list li:after, .file-uploader:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+        .hidden input {
+            display: none;
+        }
+
+    .error {
+        background-color: #d65d38;
+        color: white;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+@Html.HiddenFor(m => m.ModelID, new { id = "addEditModelID", @class = "model" })
+
+@using (Html.BeginForm("AddVehicle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+    @*<div class="form-group">
+            <label for="vehicleMakes">Make: </label>
+            <div id="vehicleMakes">@Html.DropDownListFor(m => m.MakeID, Model.Makes, new { @class = "form-control" })</div>
+        </div>
+        <div class="form-group" id="modelDiv">
+            <label for="models">Model: </label>
+            <select id="modelDropdown" class="form-control" name="ModelID"></select>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Types)
+            @Html.DropDownListFor(m => m.Types, Model.Types, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Types)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BodyStyles)
+            @Html.DropDownListFor(m => m.Types, Model.BodyStyles, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BodyStyles)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Year)
+            @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Year)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Transmissions)
+            @Html.DropDownListFor(m => m.TransmissionID, Model.Transmissions, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Transmissions)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ColorID)
+            @Html.DropDownListFor(m => m.ColorID, Model.Colors, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ColorID)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Interiors)
+            @Html.DropDownListFor(m => m.InteriorID, Model.Interiors, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Interiors)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mileage)
+            @Html.TextBoxFor(m => m.Mileage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Mileage)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Vin)
+            @Html.TextBoxFor(m => m.Vin, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Vin)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.MSRP)
+            @Html.TextBoxFor(m => m.MSRP, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MSRP)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SalePrice)
+            @Html.TextBoxFor(m => m.SalePrice, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SalePrice)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description)
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+        <div class="form-group">
+            <div class="file-uploader__message-area">
+                <p>Select a file to upload</p>
+            </div>
+            <div class="file-chooser">
+                <input class="file-chooser__input" type="file" id="attachmentqq" name="attachment" multiple="multiple">
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.VehicleID)
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary">Save</button>*@
+
+
+    <div class="col-md-10 mx-auto py-4">
+        <div class="card">
+            <div class="card-header bg-primary text-uppercase text-white">
+                <h4>Add New </h4>
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" asp-action="New">
+
+                    <input class="vehicleID" name="VehicleID" value="@Model.VehicleID" type="hidden" />
+                    <div id="modelID" style="display:none">@Model.ModelID</div>
+                    @Html.HiddenFor(m => m.ModelID, new { id = "addEditModelID", @class = "model" })
+
+                    <div class="row">
+                        <h2>@Model.ViewModelType Vehicle</h2>
+                    </div>
+
+                    <!--<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="MakeID" class="control-label"></label>
+
+                <span asp-validation-for="MakeID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="ModelID" class="control-label"></label>
+                <select id="modelDropdown" class="form-control" name="ModelID"></select>
+                <span asp-validation-for="ModelID" class="text-danger"></span>
+            </div>
+        </div>
+    </div>-->
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="vehicleMakes">Make: </label>
+                            <div id="vehicleMakes">@Html.DropDownListFor(m => m.MakeID, Model.Makes, new { @class = "form-control" })</div>
+                        </div>
+                        <div class="col-6" id="modelDiv">
+                            <label for="models">Model: </label>
+                            <select id="modelDropdown" class="form-control" name="modelID"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Types" class="control-label"></label>
+                                @Html.DropDownListFor(m => m.Types, Model.Types, new { @class = "form-control" })
+                                <span asp-validation-for="Types" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Year" class="control-label"></label>
+                                @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+                                <span asp-validation-for="Year" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="TransmissionID" class="control-label"></label>
+                                @Html.DropDownListFor(m => m.transmission, new SelectList(Model.Transmissions, "Text", "Text"), new { @class = "form-control" })
+                                <span asp-validation-for="TransmissionID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="InteriorID" class="control-label"></label>
+                                @Html.DropDownListFor(m => m.InteriorID, new SelectList(Model.Interiors, "Value", "Text") , new { @class = "form-control" })
+                                <span asp-validation-for="InteriorID" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Mileage" class="control-label"></label>
+                                @Html.TextBoxFor(m => m.Mileage, new { @class = "form-control" })
+                                <span asp-validation-for="Mileage" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="SalePrice" class="control-label"></label>
+                                @Html.TextBoxFor(m => m.SalePrice, new { @class = "form-control" })
+                                <span asp-validation-for="SalePrice" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="file-uploader__message-area">
+                                    <p>Select a file to upload</p>
+                                </div>
+                                <div class="file-chooser">
+                                    <input class="file-chooser__input" type="file" id="attachmentqq" name="attachment" multiple="multiple">
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.VehicleID)
+                            @Html.AntiForgeryToken()
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="submit" class="btn btn-sm btn-primary rounded-0 text-uppercase" />
+                        <a asp-action="Index" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-fast-backward"></i> Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+@section scripts{
+
+
+    @*HCare-860*@
+    <script>
+
+        (function ($) {
+            $.fn.uploader = function (options) {
+                var settings = $.extend(
+                    {
+                        MessageAreaText: "No files selected.",
+                        MessageAreaTextWithFiles: "File List:",
+                        DefaultErrorMessage: "Unable to open this file.",
+                        BadTypeErrorMessage: "We cannot accept this file type at this time.",
+                        acceptedFileTypes: [
+                            "pdf",
+                            "jpg",
+                            "gif",
+                            "jpeg",
+                            "bmp",
+                            "tif",
+                            "tiff",
+                            "png",
+                            "xps",
+                            "doc",
+                            "docx",
+                            "fax",
+                            "wmp",
+                            "ico",
+                            "txt",
+                            "cs",
+                            "rtf",
+                            "xls",
+                            "xlsx"
+                        ]
+                    },
+                    options
+                );
+
+                var uploadId = 1;
+                //update the messaging
+                $(".file-uploader__message-area p").text(
+                    options.MessageAreaText || settings.MessageAreaText
+                );
+
+                //create and add the file list and the hidden input list
+                var fileList = $('<ul class="file-list"></ul>');
+                var hiddenInputs = $('<div class="hidden-inputs hidden"></div>');
+                $(".file-uploader__message-area").after(fileList);
+                $(".file-list").after(hiddenInputs);
+
+                //when choosing a file, add the name to the list and copy the file input into the hidden inputs
+                $(".file-chooser__input").on("change", function () {
+                    var files = document.querySelector(".file-chooser__input").files;
+
+                    for (var i = 0; i < files.length; i++) {
+                        console.log(files[i]);
+
+                        var file = files[i];
+                        var fileName = file.name.match(/([^\\\/]+)$/)[0];
+
+                        //clear any error condition
+                        $(".file-chooser").removeClass("error");
+                        $(".error-message").remove();
+
+                        //validate the file
+                        var check = checkFile(fileName);
+                        if (check === "valid") {
+                            // move the 'real' one to hidden list
+                            $(".hidden-inputs").append($(".file-chooser__input"));
+
+                            //insert a clone after the hiddens (copy the event handlers too)
+                            $(".file-chooser").append(
+                                $(".file-chooser__input").clone({ withDataAndEvents: true })
+                            );
+
+                            //add the name and a remove button to the file-list
+                            $(".file-list").append(
+                                '<li style="display: none;"><span class="file-list__name">' +
+                                fileName +
+                                '</span><button class="removal-button" data-uploadid="' +
+                                uploadId +
+                                '"></button></li>'
+                            );
+                            $(".file-list").find("li:last").show(800);
+
+                            //removal button handler
+                            $(".removal-button").on("click", function (e) {
+                                e.preventDefault();
+
+                                //remove the corresponding hidden input
+                                $(
+                                    '.hidden-inputs input[data-uploadid="' +
+                                    $(this).data("uploadid") +
+                                    '"]'
+                                ).remove();
+
+                                //remove the name from file-list that corresponds to the button clicked
+                                $(this)
+                                    .parent()
+                                    .hide("puff")
+                                    .delay(10)
+                                    .queue(function () {
+                                        $(this).remove();
+                                    });
+
+                                //if the list is now empty, change the text back
+                                if ($(".file-list li").length === 0) {
+                                    $(".file-uploader__message-area").text(
+                                        options.MessageAreaText || settings.MessageAreaText
+                                    );
+                                }
+                            });
+
+                            //so the event handler works on the new "real" one
+                            $(".hidden-inputs .file-chooser__input")
+                                .removeClass("file-chooser__input")
+                                .attr("data-uploadId", uploadId);
+
+                            //update the message area
+                            $(".file-uploader__message-area").text(
+                                options.MessageAreaTextWithFiles ||
+                                settings.MessageAreaTextWithFiles
+                            );
+
+                            uploadId++;
+                        } else {
+                            //indicate that the file is not ok
+                            $(".file-chooser").addClass("error");
+                            var errorText =
+                                options.DefaultErrorMessage || settings.DefaultErrorMessage;
+
+                            if (check === "badFileName") {
+                                errorText =
+                                    options.BadTypeErrorMessage || settings.BadTypeErrorMessage;
+                            }
+
+                            $(".file-chooser__input").after(
+                                '<p class="error-message">' + errorText + "</p>"
+                            );
+                        }
+                    }
+                });
+
+                var checkFile = function (fileName) {
+                    var accepted = "invalid",
+                        acceptedFileTypes =
+                            this.acceptedFileTypes || settings.acceptedFileTypes,
+                        regex;
+
+                    for (var i = 0; i < acceptedFileTypes.length; i++) {
+                        regex = new RegExp("\\." + acceptedFileTypes[i] + "$", "i");
+
+                        if (regex.test(fileName)) {
+                            accepted = "valid";
+                            break;
+                        } else {
+                            accepted = "badFileName";
+                        }
+                    }
+
+                    return accepted;
+                };
+            };
+        })($);
+
+        //init
+        $(document).ready(function () {
+            console.log("hi");
+            $(".fileUploader").uploader({
+                MessageAreaText: "No files selected. Please select a file."
+            });
+        });
+
+
+
+    </script>
+
+<script>
+    $(document).ready(function () {
+        setModelDropdowns($('#vehicleMakes option').filter(':selected').text());
+
+        if ($('#modelID')) {
+            setModelIDValue();
+        }
+        $('#vehicleMakes').on('change',
+            function () {
+                setModelDropdowns($('#vehicleMakes option').filter(':selected').text());
+            });
+        $('#deleteVehicle').on('click',
+            function () {
+                setModelIDValue();
+                deleteVehicle();
+            });
+        $('#modelDropdown').on('change',
+            function () {
+                setModelIDValue();
+            });
+        $('#submit').on('click',
+            function () {
+                setModelIDValue();
+            });
+    });
+
+    function checkModelID() {
+        var value = $('#addEditModelID').val();
+        if (value != 0) {
+            $('#addEditModelID option[value="' + value + '"]').prop('selected', true);
+        }
+    }
+
+    function setModelIDValue() {
+        var modelID = getSelectedModelID();
+        $('.model').val(modelID);
+    }
+
+    function getSelectedModelID() {
+        return parseInt($('#modelDropdown option').filter(':selected').val());
+    }
+
+
+
+    function setModelDropdowns(selectedMake) {
+        $('#modelDropdown').empty();
+        $.ajax({
+            type: 'GET',
+            url: '/Admin/ModelCheck',
+            data: { selectedMake: selectedMake },
+            dataType: "JSON",
+            success: function (modelData) {
+         
+                $.each(modelData, function (i, p) {
+
+                    $('#modelDropdown').append($('<option></option>').val(p.modelID).html(p.modelName));
+                });
+                //$.each(modelData,
+                //    function (model) {
+     
+                //        $('#modelDropdown').append($('<option></option>').val(model.ModelID).html(model.ModelName));
+
+                //        //var value = $('#modelID').text();
+                //        //$('#modelDropdown').append("<option value=" +
+                //        //    ModelId+
+                //        //    "" +
+                //        //    (ModelId == value ? " selected=\"selected\"" : "") +
+                //        //    ">" +
+                //        //    modelName +
+                //        //    "</option>");
+                //    });
+                //checkModelID();
+            },
+            error: function () {
+            }
+        });
+
+    }
+</script>
+
+
+}

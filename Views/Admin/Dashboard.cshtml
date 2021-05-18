@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = null;
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="~/DashBoard/font-awesome.min.css">
+<link rel="stylesheet" href="~/DashBoard/bootstrap.min.css">
+<link rel="stylesheet" href="~/DashBoard/templatemo_main.min.css">
+
+
+
+
+<div id="main-wrapper">
+
+    <div class="template-page-wrapper">
+        <div class="templatemo-content-wrapper">
+            <div class="">
+                <ol class="breadcrumb"><li class="active"><a href="#">Admin Panel</a></li></ol>
+                <input type="text" class="hidden" id="admin-username" name="admin-username" value="Khodani">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Dashboard</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">5</div>
+                                        <div>Administrators</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="admin.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-car fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">4</div>
+                                        <div>Vehicles</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="inventory">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-car fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">4</div>
+                                        <div>Vehicles make</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="Makes">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Make Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-bottom-30">
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<script src="~/DashBoard/AdminPageTemplate.js"></script>
+@section scripts{
+
+}
+

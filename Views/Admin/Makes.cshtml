@@ -1,0 +1,78 @@
+﻿@model Car_delearship.Models.ViewModel.MakeListViewModel
+
+@{ ViewData["Title"] = "MakesAsync"; }
+
+<link rel="stylesheet" href="~/style/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/style/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link rel="stylesheet" href="~/style/css/lightbox.min.css" />
+
+
+<!-- Slick -->
+<link rel="stylesheet" type="text/css" href="~/style/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/style/slick/slick-theme.css" />
+
+
+<link rel="stylesheet" href="~/Test/css/lightslider.css" />
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="www.lisautosales.co.za">Lis Auto Sales</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="@Url.Action("Dashboard")">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Makes")">Makes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Models")">Models</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br />
+<br />
+<br />
+<div>
+    <h2>Makes</h2>
+    @using (Html.BeginForm("Makes", "Admin", FormMethod.Post))
+    {
+@Html.ValidationSummary(true)
+                <div clas="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <label for="makeTextBox" class="mr-1 mt-1">New Make</label>
+                                    @Html.TextBoxFor(m => m.NewMake.MakeName, new { @class = "form-control" })
+                                    <button type="submit" class="btn btn-secondary ml-2">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>}
+    <table class="table table-bordered table-hover mt-1">
+        <thead>
+        <td>Make</td>
+        <td>Date Added</td>
+        <td>User</td>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.ViewModels.Count; i++)
+            {
+<tr>
+    <td>@Model.ViewModels[i].Make.MakeName</td>
+    <td>@Model.ViewModels[i].Make.DateAdded.ToString("MM/dd/yyyy")</td>
+    <td>@Model.ViewModels[i].StaffMemberEmail</td>
+</tr>
+}
+        </tbody>
+    </table>
+</div>

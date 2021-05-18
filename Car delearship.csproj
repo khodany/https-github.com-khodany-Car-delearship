@@ -1,0 +1,224 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Car_delearship-0A38C6E7-BC97-4ED2-B43A-46707172D5CF</UserSecretsId>
+    <RootNamespace>Car_delearship</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\images\Colorlogo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\A1 sLine\a1sline.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline1.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline10.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline2.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline3.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline4.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline5.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline6.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline7.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline8.jpeg" />
+    <None Include="wwwroot\images\A1 sLine\a1sline9.jpeg" />
+    <None Include="wwwroot\images\A\A1.jpeg" />
+    <None Include="wwwroot\images\A\a2.jpeg" />
+    <None Include="wwwroot\images\A\a3.jpeg" />
+    <None Include="wwwroot\images\A\a4.jpeg" />
+    <None Include="wwwroot\images\A\a5.jpeg" />
+    <None Include="wwwroot\images\A\a6.jpeg" />
+    <None Include="wwwroot\images\A\a7.jpeg" />
+    <None Include="wwwroot\images\A\WhatsApp Image 2020-06-23 at 16.19.28.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.34 %281%29.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.34.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.35 %281%29.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.35 %283%29.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.35.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.36 %281%29.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.36 %282%29.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.36.jpeg" />
+    <None Include="wwwroot\images\benz1\WhatsApp Image 2020-10-31 at 12.10.37.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass1.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass10.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass2.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass3.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass4.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass5.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass6.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass7.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass8.jpeg" />
+    <None Include="wwwroot\images\BenzSClass\BenzSClass9.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano1.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano10.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano2.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano3.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano4.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano5.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano6.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano7.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano8.jpeg" />
+    <None Include="wwwroot\images\BenzViano\BenzViano9.jpeg" />
+    <None Include="wwwroot\images\BenzViano\WhatsApp Image 2020-10-31 at 12.09.37 %282%29.jpeg" />
+    <None Include="wwwroot\images\BenzViano\WhatsApp Image 2020-10-31 at 12.09.37.jpeg" />
+    <None Include="wwwroot\images\BenzViano\WhatsApp Image 2020-10-31 at 12.09.38.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz.jpg" />
+    <None Include="wwwroot\images\Benz\Benz1.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz2.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz3.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz4.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz5.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz6.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz7.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz8.jpeg" />
+    <None Include="wwwroot\images\Benz\Benz9.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX3.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX31.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX310.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX32.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX33.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX34.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX35.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX36.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX37.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX38.jpeg" />
+    <None Include="wwwroot\images\BMWX3\BMWX39.jpeg" />
+    <None Include="wwwroot\images\call.png" />
+    <None Include="wwwroot\images\callNow.png" />
+    <None Include="wwwroot\images\car.jpg" />
+    <None Include="wwwroot\images\cardealer-front-master.zip" />
+    <None Include="wwwroot\images\cars.jpeg" />
+    <None Include="wwwroot\images\close.png" />
+    <None Include="wwwroot\images\Ford\WhatsApp Image 2020-10-31 at 12.09.46 %281%29.jpeg" />
+    <None Include="wwwroot\images\Ford\WhatsApp Image 2020-10-31 at 12.09.46.jpeg" />
+    <None Include="wwwroot\images\Ford\WhatsApp Image 2020-10-31 at 12.09.47 %281%29.jpeg" />
+    <None Include="wwwroot\images\Ford\WhatsApp Image 2020-10-31 at 12.09.47.jpeg" />
+    <None Include="wwwroot\images\gear.gif" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager .jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 1.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 10.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 11.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 2.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 3.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 4.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 5.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 6.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 7.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 8.jpeg" />
+    <None Include="wwwroot\images\GrandVoyaga\Voyager 9.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP1.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP2.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP3.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP4.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP6.jpeg" />
+    <None Include="wwwroot\images\HB37DNGP7.jpeg" />
+    <None Include="wwwroot\images\Kia\kia.jpeg" />
+    <None Include="wwwroot\images\Kia\kia1.jpeg" />
+    <None Include="wwwroot\images\Kia\kia2.jpeg" />
+    <None Include="wwwroot\images\Kia\kia3.jpeg" />
+    <None Include="wwwroot\images\Kia\kia4.jpeg" />
+    <None Include="wwwroot\images\Kia\kia5.jpeg" />
+    <None Include="wwwroot\images\Kia\kia6.jpeg" />
+    <None Include="wwwroot\images\Kia\kia7.jpeg" />
+    <None Include="wwwroot\images\Kia\kia8.jpeg" />
+    <None Include="wwwroot\images\loading.gif" />
+    <None Include="wwwroot\images\logos.png" />
+    <None Include="wwwroot\images\next.png" />
+    <None Include="wwwroot\images\pic1.jpg" />
+    <None Include="wwwroot\images\Pjot\Pjot.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot1.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot2.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot3.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot4.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot5.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot6.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot7.jpeg" />
+    <None Include="wwwroot\images\Pjot\Pjot8.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue1.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue2.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue3.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue4.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue5.jpeg" />
+    <None Include="wwwroot\images\PoloBlue\PoloBlue6.jpg" />
+    <None Include="wwwroot\images\prev.png" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d1.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d10.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d2.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d3.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d4.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d5.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d6.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d7.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d8.jpeg" />
+    <None Include="wwwroot\images\ToyotaD4d\ToyotaD4d9.jpeg" />
+    <None Include="wwwroot\style\css\bootstrap.min.css" />
+    <None Include="wwwroot\style\css\lightbox.min.css" />
+    <None Include="wwwroot\style\css\style.css" />
+    <None Include="wwwroot\style\js\all.js" />
+    <None Include="wwwroot\style\js\bootstrap.min.js" />
+    <None Include="wwwroot\style\js\jquery.min.js" />
+    <None Include="wwwroot\style\js\lightbox-plus-jquery.min.js" />
+    <None Include="wwwroot\style\js\logic.js" />
+    <None Include="wwwroot\style\js\script.js" />
+    <None Include="wwwroot\style\slick\ajax-loader.gif" />
+    <None Include="wwwroot\style\slick\config.rb" />
+    <None Include="wwwroot\style\slick\fonts\slick.eot" />
+    <None Include="wwwroot\style\slick\fonts\slick.svg" />
+    <None Include="wwwroot\style\slick\fonts\slick.ttf" />
+    <None Include="wwwroot\style\slick\fonts\slick.woff" />
+    <None Include="wwwroot\style\slick\slick-theme.css" />
+    <None Include="wwwroot\style\slick\slick-theme.less" />
+    <None Include="wwwroot\style\slick\slick-theme.scss" />
+    <None Include="wwwroot\style\slick\slick.css" />
+    <None Include="wwwroot\style\slick\slick.js" />
+    <None Include="wwwroot\style\slick\slick.less" />
+    <None Include="wwwroot\style\slick\slick.min.js" />
+    <None Include="wwwroot\style\slick\slick.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="cloudscribe.Pagination.Models" Version="1.1.0" />
+    <PackageReference Include="cloudscribe.Web.Pagination" Version="2.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="Slick" Version="1.5.11" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Vehicle\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\style\js\all.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\style\js\JavaScript.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\style\js\logic.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\style\js\script.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\style\slick\slick.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\style\slick\slick.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

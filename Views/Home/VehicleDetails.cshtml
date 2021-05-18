@@ -1,0 +1,974 @@
+﻿@model Car_delearship.Models.ViewModel.VehicleViewModel
+@{
+    ViewData["Title"] = "VehicleDetails";
+}
+<link href="~/style/css/StyleSheet.css" rel="stylesheet" />
+<style>
+    ul {
+        list-style: none outside none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .demo .item {
+        margin-bottom: 60px;
+    }
+
+    .content-slider li {
+        background-color: #ed3020;
+        text-align: center;
+        color: #FFF;
+    }
+
+    .content-slider h3 {
+        margin: 0;
+        padding: 70px 0;
+    }
+
+    .demo {
+        width: 800px;
+    }
+</style>
+<div class="site_menu">
+    <div class="standardContainer">
+        <div class="main_logo"><a href="https://www.lisautosales.co.za/"><span class="helper"></span><img src="~/images/Colorlogo.jpg" alt="Lis Auto Sales" style="height: 95px;min-width: 45px" /></a></div>
+        <nav class="navbar navbar-expand-lg px-3" id="navBar" style="background:#000000;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
+
+                <span class="navbar-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+
+            </button>
+
+            @*<div class="collapse navbar-collapse" id="myNav">
+
+
+
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a href="index.php" class="nav-link">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a href="#contact" class="nav-link">Contact us</a>
+                    </li>
+
+                </ul>
+
+            </div>*@
+
+
+            <div class="collapse navbar-collapse" id="myNav">
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active" style="background-color:white ">
+                        <a href="index.php" style=" margin-bottom: 37.3px; " class="nav-link"><span>Home</span></a>
+                    </li>
+                    <li class="nav-item active" style="background-color:cornflowerblue ">
+                        <a href="index.php" class="nav-link">Show room</a>
+                    </li>
+                    <li class="nav-item active" style="background-color:white ">
+                        <a href="index.php" class="nav-link">Finance</a>
+                    </li>
+                    <li class="nav-item" style="background-color:white ">
+                        <a href="#contact" class="nav-link">Contact us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <div class="menu_button mobile active"></div>
+        <div class="menu-main-menu-container">
+            @*<ul id="main_menu" class="mainest_menu">
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/"><span class="helper"></span>Home</a>
+                    </li>
+                    <li class="main_menu_item active_li">
+                        <a class=" active_menu" href="https://www.theautoagents.co.za/showroom/"><span class="helper"></span>Showroom</a>
+                    </li>
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/finance/"><span class="helper"></span>Finance</a>
+                    </li>
+                    <li class="main_menu_item">
+                        <a class="" href="https://www.theautoagents.co.za/contact-us/"><span class="helper"></span>Contact Us</a>
+                    </li>
+                </ul>*@
+        </div>
+    </div>
+</div>
+
+<div class="standardContainer fixed_notice" style="background-color: darkgoldenrod">
+    <div class="notice">
+        call us: 082 303 0943
+    </div>
+</div>
+
+<div class="cpa">
+
+    <div class="mobile mobi_share_holder">
+        <div>
+            <p>Share this vehicle:</p>
+            <div class="clear spacer full_width">&nbsp;</div>
+            <a href="http://www.facebook.com/share.php?u=https://www.theautoagents.co.za/showroom/maserati/levante/25928188&title=2018+MASERATI+LEVANTE+S+GRANSPORT" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'); return false;">
+                <i class="fa fa-facebook fa-lg"></i>
+            </a>
+
+            <a href="http://twitter.com/home?status=2018 MASERATI LEVANTE S GRANSPORT+https://www.theautoagents.co.za/showroom/maserati/levante/25928188" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'); return false;">
+                <i class="fa fa-twitter fa-lg"></i>
+            </a>
+        </div>
+    </div>
+    <div class="sr_fpa sr_left_fpa printVehicleDetails">
+
+        <div class="vehicle_details">
+            <h2>@Model.year <b>@Model.makeName</b>@Model.ModelName</h2>            <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="col imagesrbox">
+
+            @*<div id="at_gallery" class="royalSlider rsDefault">
+                    <a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309197" href="https://img.autotrader.co.za/11309197"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309197" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309203" href="https://img.autotrader.co.za/11309203"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309203" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309195" href="https://img.autotrader.co.za/11309195"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309195" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309205" href="https://img.autotrader.co.za/11309205"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309205" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309185" href="https://img.autotrader.co.za/11309185"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309185" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309184" href="https://img.autotrader.co.za/11309184"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309184" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309193" href="https://img.autotrader.co.za/11309193"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309193" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309200" href="https://img.autotrader.co.za/11309200"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309200" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309201" href="https://img.autotrader.co.za/11309201"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309201" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309194" href="https://img.autotrader.co.za/11309194"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309194" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309186" href="https://img.autotrader.co.za/11309186"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309186" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309191" href="https://img.autotrader.co.za/11309191"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309191" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309187" href="https://img.autotrader.co.za/11309187"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309187" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309188" href="https://img.autotrader.co.za/11309188"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309188" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309189" href="https://img.autotrader.co.za/11309189"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309189" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309190" href="https://img.autotrader.co.za/11309190"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309190" /></a><a class="rsImg" data-rsw="640" data-rsh="480" data-rsBigImg="https://img.autotrader.co.za/11309192" href="https://img.autotrader.co.za/11309192"><img width="96" height="72" class="rsTmb" src="https://img.autotrader.co.za/11309192" /></a>
+                </div>*@
+            <div class="demo">
+                <div class="item">
+                    <div class="clearfix" style="max-width:474px;">
+                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                            @foreach (var imageItem in Model.ImagesPathes)
+                            {
+                                <li data-thumb="/@imageItem.Substring(imageItem.IndexOf('V')).Replace(@"\\\","/").Replace(@"\\", @"/")">
+                                    <img src="/@imageItem.Substring(imageItem.IndexOf('V')).Replace(@"\\\","/").Replace(@"\\", @"/")" style="max-width: 100%; height: auto;" />
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear large_space"></div>
+
+        </div>
+        <div class="clear spacer small_height_space full_width">&nbsp;</div>
+
+        <div class="single_page_styled_div">
+            <div class="single_page_div cpa_features">
+                <div class="clear large_space"></div>
+                <div class="mobi_price mobile">
+                    <h1>Price</h1>
+                    <h1 class="main_price">R @Model.salesPrice</h1>
+                </div>                <div class="col">
+                    <div class="listinfo">Body Type</div><div class="listinfo_desc">@Model.Style</div>
+                    <div class="listinfo">Fuel Type</div><div class="listinfo_desc">Petrol</div>
+                    <div class="listinfo">Transmission</div><div class="listinfo_desc">@Model.Transmission</div>
+                    <div class="listinfo">Colour</div><div class="listinfo_desc">@Model.Color</div>
+                    <div class="listinfo">Mileage</div><div class="listinfo_desc">@Model.Mileage Kilometre</div>
+                    <div class="listinfo">Status</div><div class="listinfo_desc">Used</div>
+                    <div class="clear large_space"></div>
+                </div>
+            </div>
+            <div class="clear spacer full_width small_height_space"></div>
+            <div class="vehicle_details_inner">
+                <div class="full_page_description desk_desc_expand">
+                    @Model.year @Model.makeName  @Model.ModelName :
+
+                    Full Service History - @Model.makeName,
+                    Low km only - @Model.Mileage km.
+
+                    Factory Fitted Options:
+
+                    @Model.description
+
+                    Beautiful Vehicle Inside & Out.
+
+                    Dealer - Lis Auto Sales :
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sr_fpa sr_right_fpa desktop_tab">
+
+        <h1 class="main_price">R @Model.salesPrice</h1>        <div class="single_page_styled_div less_radius contact_number">
+            <span class="paddress">PHYSICAL ADDRESS:</span>
+            288 Sefako Makgatho Dr,<br />
+            Sinoville <br /> Pretoria<br />
+            0182<br />
+
+            <img src="https://www.theautoagents.co.za/wp-content/themes/template2/images/info_images.png" class="info_icon" />
+        </div>
+
+
+        <div class="single_page_styled_div less_radius contact_number_section">
+            <span class="telnumber">
+                082 303 0943
+            </span>
+            <img class="tel_image" src="https://s3-eu-west-1.amazonaws.com/atdwsimages.creative-lab.co.za/images/zambesiautomottorad/phone_icon.png">
+        </div>
+        <div class="clear spacer full_width semi_small_height_space">&nbsp;</div>
+        <div class="single_page_styled_div">
+            <div alt="show_contact_form" class="fpa_tab_icon form_switch contact_button_lightbox " style="background-color:deepskyblue"><span class="icon_label_contact">CONTACT US</span></div>
+            <div alt="show_finance_form" class="fpa_tab_icon form_switch contact_button_lightbox stick_right"><span class="icon_label_contact">FINANCE CALCULATOR</span></div>
+
+            <div class="show_contact_form tab_forms">
+
+                <div role="form" class="wpcf7" id="wpcf7-f3-o1" dir="ltr">
+                    <div class="screen-reader-response"></div>
+                    <form action="/showroom/maserati/levante/25928188/#wpcf7-f3-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="3" />
+                            <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                            <input type="hidden" name="_wpcf7_locale" value="" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3-o1" />
+                            <input type="hidden" name="_wpcf7_container_post" value="0" />
+                            <input type="hidden" name="g-recaptcha-response" value="" />
+                        </div>
+                        <p>
+                            Name<br />
+                            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" /></span>
+                        </p>
+                        <p>
+                            Email<br />
+                            <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Preferred Email Address" /></span>
+                        </p>
+                        <p>
+                            Number<br />
+                            <span class="wpcf7-form-control-wrap tel-122"><input type="tel" name="tel-122" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Preferred Contact Number" /></span>
+                        </p>
+                        <p>
+                            Subject<br />
+                            <span class="wpcf7-form-control-wrap menu-116"><select name="menu-116" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="Vehicle Enquiry">Vehicle Enquiry</option><option value="Book a Test Drive">Book a Test Drive</option></select></span>
+                        </p>
+                        <p>
+                            Your Message<br />
+                            <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message..."></textarea></span>
+                        </p>
+
+                        <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+                        <p>&nbsp;</p>
+                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                    </form>
+                </div>
+                @*<script>
+                jQuery(document).ready(function () {
+                    jQuery(".wpcf7 input[name=vehicle_enquiry_id]").val('25928188');
+                });
+            </script>*@
+            </div>
+            <div class="show_finance_form ">
+                <div class="fincalc" style="width:100% !important;">
+                    <form id="financeCalculator" action="" method="POST">
+                        <div class="header">
+                            <h3>The Monthly Repayment will be: <span class="total_amount">R 0.00</span></h3>
+                            <div>
+                                <div class="finance_ammount_header">
+                                    <span>Finance Ammount:</span>
+                                    <span class="finance_ammounts totals">R 0.00</span>
+                                </div>
+                                <hr>
+                                <div class="total_paid_header">
+                                    <span>Total paid over contract period:</span>
+                                    <span class="total_paid_ammounts totals">R 0.00</span>
+                                </div>
+                                <hr>
+                                <div class="balloon_payment_header">
+                                    <span>Balloon Payment:</span>
+                                    <span class="balloon_payment_ammounts totals">R 0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_fields">
+                            <div class="left">
+                                <span>Vehicle Purchase Price:</span>
+                                <input type="text" name="purchase_price" maxlength="7" class="purchase_price" placeholder="Total Value of the Vehicle">
+                                <span>Repayment period:</span>
+                                <select name="repayment_period" class="repayment_period disabled" disabled>
+                                    <option value="12">12 Months</option>
+                                    <option value="24">24 Months</option>
+                                    <option value="36">36 Months</option>
+                                    <option value="48">48 Months</option>
+                                    <option value="54">54 Months</option>
+                                    <option value="60" selected="selected">60 Months</option>
+                                    <option value="72">72 Months</option>
+                                </select>
+                                <span>Deposit:</span>
+                                <select name="deposit_percent" class="deposit_percent disabled" disabled>
+                                    <option value="0" selected="selected">0%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                    <option value="25">25%</option>
+                                    <option value="30">30%</option>
+                                    <option value="35">35%</option>
+                                    <option value="40">40%</option>
+                                    <option value="45">45%</option>
+                                    <option value="50">50%</option>
+                                </select>
+                                <div class="or_option">
+                                    <span>or</span>
+                                    <input type="text" name="deposit_ammount" class="deposit_ammount disabled" placeholder="Please put in a preferred amount" disabled>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <span>Balloon Payment:</span>
+                                <select name="balloon_payment" class="balloon_payment disabled" disabled>
+                                    <option value="0" selected="selected">0%</option>
+                                    <option value="5">5%</option>
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                    <option value="25">25%</option>
+                                    <option value="30">30%</option>
+                                    <option value="35">35%</option>
+                                    <option value="40">40%</option>
+                                    <option value="45">45%</option>
+                                    <option value="50">50%</option>
+                                    <option value="55">55%</option>
+                                    <option value="60">60%</option>
+                                    <option value="65">65%</option>
+                                </select>
+                                <span>Anticipated interest rate:</span>
+                                <select name="interest_rate" class="interest_rate disabled" disabled>
+                                    <option value="07">7.00%</option>
+                                    <option value="0725">7.25%</option>
+                                    <option value="075">7.50%</option>
+                                    <option value="0775">7.75%</option>
+                                    <option value="08">8.00%</option>
+                                    <option value="0825">8.25%</option>
+                                    <option value="085">8.50%</option>
+                                    <option value="0875">8.75%</option>
+                                    <option value="09">9.00%</option>
+                                    <option value="0925">9.25%</option>
+                                    <option value="095">9.50%</option>
+                                    <option value="0975">9.75%</option>
+                                    <option value="1">10.00%</option>
+                                    <option value="1025">10.25%</option>
+                                    <option value="105">10.50%</option>
+                                    <option value="1075">10.75%</option>
+                                    <option value="11">11.00%</option>
+                                    <option value="1125">11.25%</option>
+                                    <option value="115">11.50%</option>
+                                    <option value="1175">11.75%</option>
+                                    <option value="12" selected="selected">12.00%</option>
+                                    <option value="1225">12.25%</option>
+                                    <option value="125">12.50%</option>
+                                    <option value="1275">12.75%</option>
+                                    <option value="13">13.00%</option>
+                                    <option value="1325">13.25%</option>
+                                    <option value="135">13.50%</option>
+                                    <option value="1375">13.75%</option>
+                                    <option value="14">14.00%</option>
+                                    <option value="1425">14.25%</option>
+                                    <option value="145">14.50%</option>
+                                    <option value="1475">14.75%</option>
+                                    <option value="15">15.00%</option>
+                                    <option value="1525">15.25%</option>
+                                    <option value="155">15.50%</option>
+                                    <option value="1575">15.75%</option>
+                                    <option value="16">16.00%</option>
+                                    <option value="1625">16.25%</option>
+                                    <option value="165">16.50%</option>
+                                    <option value="1675">16.75%</option>
+                                    <option value="17">17.00%</option>
+                                    <option value="1725">17.25%</option>
+                                    <option value="175">17.50%</option>
+                                    <option value="1775">17.75%</option>
+                                    <option value="18">18.00%</option>
+                                    <option value="1825">18.25%</option>
+                                    <option value="185">18.50%</option>
+                                    <option value="1875">18.75%</option>
+                                    <option value="19">19.00%</option>
+                                    <option value="1925">19.25%</option>
+                                    <option value="195">19.50%</option>
+                                    <option value="1975">19.75%</option>
+                                    <option value="20">20.00%</option>
+                                    <option value="2025">20.25%</option>
+                                    <option value="205">20.50%</option>
+                                    <option value="2075">20.75%</option>
+                                    <option value="21">21.00%</option>
+                                </select>
+                                <p><b>Disclaimer:</b> All calculations made on this calculator, together with rates quoted, are guidelines only and subject to confirmation at the time of finalising any transaction with your preferred vehicle financing company.</p>
+                            </div>
+                        </div>
+                        <div class="apply_button">
+                            <input type="button" value="Apply for finance" name="redirect_button" class="redirect_button" onclick="window.location.href='https://www.theautoagents.co.za/finance/'">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs mb-4">
+            <div class="tab-button-outer">
+                <ul id="tab-button">
+                    <li><a href="#tab01">Finance estimate<</a></li>
+                    <li><a href="#tab02">Features & Options</a></li>
+                </ul>
+            </div>
+            <div class="tab-select-outer">
+                <select id="tab-select">
+                    <option value="#tab01">Finance estimate</option>
+                    <option value="#tab02">Features & Options</option>
+
+                </select>
+            </div>
+
+            <div id="tab01" class="tab-contents">
+                <h2>Finance estimate</h2>
+                <div class="middle">
+                    <a href="#" class="fl_box-this_finance_form_foot" title="Finance Calculator">Finance Calc</a><div style="display:none">
+                        <div id="form-lightbox-this_finance_form_foot" style="">
+                            <div class="show_finance_form showthis">
+                                <div class="fincalc" style="width:100% !important;">
+                                    <form id="financeCalculator" action="" method="POST">
+                                        <div class="header">
+                                            <h3>The Monthly Repayment will be: <span class="total_amount">R 0.00</span></h3>
+                                            <div>
+                                                <div class="finance_ammount_header">
+                                                    <span>Finance Ammount:</span>
+                                                    <span class="finance_ammounts totals">R 0.00</span>
+                                                </div>
+                                                <hr>
+                                                <div class="total_paid_header">
+                                                    <span>Total paid over contract period:</span>
+                                                    <span class="total_paid_ammounts totals">R 0.00</span>
+                                                </div>
+                                                <hr>
+                                                <div class="balloon_payment_header">
+                                                    <span>Balloon Payment:</span>
+                                                    <span class="balloon_payment_ammounts totals">R 0.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input_fields">
+                                            <div class="left">
+                                                <span>Vehicle Purchase Price:</span>
+                                                <input type="text" name="purchase_price" maxlength="7" class="purchase_price" placeholder="Total Value of the Vehicle">
+                                                <span>Repayment period:</span>
+                                                <select name="repayment_period" class="repayment_period disabled" disabled>
+                                                    <option value="12">12 Months</option>
+                                                    <option value="24">24 Months</option>
+                                                    <option value="36">36 Months</option>
+                                                    <option value="48">48 Months</option>
+                                                    <option value="54">54 Months</option>
+                                                    <option value="60" selected="selected">60 Months</option>
+                                                    <option value="72">72 Months</option>
+                                                </select>
+                                                <span>Deposit:</span>
+                                                <select name="deposit_percent" class="deposit_percent disabled" disabled>
+                                                    <option value="0" selected="selected">0%</option>
+                                                    <option value="10">10%</option>
+                                                    <option value="15">15%</option>
+                                                    <option value="20">20%</option>
+                                                    <option value="25">25%</option>
+                                                    <option value="30">30%</option>
+                                                    <option value="35">35%</option>
+                                                    <option value="40">40%</option>
+                                                    <option value="45">45%</option>
+                                                    <option value="50">50%</option>
+                                                </select>
+                                                <div class="or_option">
+                                                    <span>or</span>
+                                                    <input type="text" name="deposit_ammount" class="deposit_ammount disabled" placeholder="Please put in a preferred amount" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span>Balloon Payment:</span>
+                                                <select name="balloon_payment" class="balloon_payment disabled" disabled>
+                                                    <option value="0" selected="selected">0%</option>
+                                                    <option value="5">5%</option>
+                                                    <option value="10">10%</option>
+                                                    <option value="15">15%</option>
+                                                    <option value="20">20%</option>
+                                                    <option value="25">25%</option>
+                                                    <option value="30">30%</option>
+                                                    <option value="35">35%</option>
+                                                    <option value="40">40%</option>
+                                                    <option value="45">45%</option>
+                                                    <option value="50">50%</option>
+                                                    <option value="55">55%</option>
+                                                    <option value="60">60%</option>
+                                                    <option value="65">65%</option>
+                                                </select>
+                                                <span>Anticipated interest rate:</span>
+                                                <select name="interest_rate" class="interest_rate disabled" disabled>
+                                                    <option value="07">7.00%</option>
+                                                    <option value="0725">7.25%</option>
+                                                    <option value="075">7.50%</option>
+                                                    <option value="0775">7.75%</option>
+                                                    <option value="08">8.00%</option>
+                                                    <option value="0825">8.25%</option>
+                                                    <option value="085">8.50%</option>
+                                                    <option value="0875">8.75%</option>
+                                                    <option value="09">9.00%</option>
+                                                    <option value="0925">9.25%</option>
+                                                    <option value="095">9.50%</option>
+                                                    <option value="0975">9.75%</option>
+                                                    <option value="1">10.00%</option>
+                                                    <option value="1025">10.25%</option>
+                                                    <option value="105">10.50%</option>
+                                                    <option value="1075">10.75%</option>
+                                                    <option value="11">11.00%</option>
+                                                    <option value="1125">11.25%</option>
+                                                    <option value="115">11.50%</option>
+                                                    <option value="1175">11.75%</option>
+                                                    <option value="12" selected="selected">12.00%</option>
+                                                    <option value="1225">12.25%</option>
+                                                    <option value="125">12.50%</option>
+                                                    <option value="1275">12.75%</option>
+                                                    <option value="13">13.00%</option>
+                                                    <option value="1325">13.25%</option>
+                                                    <option value="135">13.50%</option>
+                                                    <option value="1375">13.75%</option>
+                                                    <option value="14">14.00%</option>
+                                                    <option value="1425">14.25%</option>
+                                                    <option value="145">14.50%</option>
+                                                    <option value="1475">14.75%</option>
+                                                    <option value="15">15.00%</option>
+                                                    <option value="1525">15.25%</option>
+                                                    <option value="155">15.50%</option>
+                                                    <option value="1575">15.75%</option>
+                                                    <option value="16">16.00%</option>
+                                                    <option value="1625">16.25%</option>
+                                                    <option value="165">16.50%</option>
+                                                    <option value="1675">16.75%</option>
+                                                    <option value="17">17.00%</option>
+                                                    <option value="1725">17.25%</option>
+                                                    <option value="175">17.50%</option>
+                                                    <option value="1775">17.75%</option>
+                                                    <option value="18">18.00%</option>
+                                                    <option value="1825">18.25%</option>
+                                                    <option value="185">18.50%</option>
+                                                    <option value="1875">18.75%</option>
+                                                    <option value="19">19.00%</option>
+                                                    <option value="1925">19.25%</option>
+                                                    <option value="195">19.50%</option>
+                                                    <option value="1975">19.75%</option>
+                                                    <option value="20">20.00%</option>
+                                                    <option value="2025">20.25%</option>
+                                                    <option value="205">20.50%</option>
+                                                    <option value="2075">20.75%</option>
+                                                    <option value="21">21.00%</option>
+                                                </select>
+                                                <p><b>Disclaimer:</b> All calculations made on this calculator, together with rates quoted, are guidelines only and subject to confirmation at the time of finalising any transaction with your preferred vehicle financing company.</p>
+                                            </div>
+                                        </div>
+                                        <div class="apply_button">
+                                            <input type="button" value="Apply for finance" name="redirect_button" class="redirect_button" onclick="window.location.href='https://www.theautoagents.co.za/finance/'">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<script type="text/javascript">
+                            var iFrame_this_finance_form_foot = jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src");
+                            jQuery(document).ready(function () {
+                                jQuery(".fl_box-this_finance_form_foot").colorbox({
+                                    inline: true,
+                                    href: "#form-lightbox-this_finance_form_foot",
+                                    transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                                    onClosed: function () { jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src", iFrame_this_finance_form_foot); }
+                                });
+                            });
+                        </script>*@
+                </div>
+            </div>
+            <div id="tab02" class="tab-contents">
+                <h2>Features & Options</h2>
+
+                <div role="form" class="wpcf7" id="wpcf7-f3-o1" dir="ltr">
+                    <div class="screen-reader-response"></div>
+                    <form action="/showroom/maserati/levante/25928188/#wpcf7-f3-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="3" />
+                            <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                            <input type="hidden" name="_wpcf7_locale" value="" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3-o1" />
+                            <input type="hidden" name="_wpcf7_container_post" value="0" />
+                            <input type="hidden" name="g-recaptcha-response" value="" />
+                        </div>
+                        <p>
+                            Name<br />
+                            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" /></span>
+                        </p>
+                        <p>
+                            Email<br />
+                            <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Preferred Email Address" /></span>
+                        </p>
+                        <p>
+                            Number<br />
+                            <span class="wpcf7-form-control-wrap tel-122"><input type="tel" name="tel-122" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Preferred Contact Number" /></span>
+                        </p>
+                        <p>
+                            Subject<br />
+                            <span class="wpcf7-form-control-wrap menu-116"><select name="menu-116" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="Vehicle Enquiry">Vehicle Enquiry</option><option value="Book a Test Drive">Book a Test Drive</option></select></span>
+                        </p>
+                        <p>
+                            Your Message<br />
+                            <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message..."></textarea></span>
+                        </p>
+
+                        <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+                        <p>&nbsp;</p>
+                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clear spacer full_width small_height_space">&nbsp;</div>
+    </div>
+    <div class="clear"></div>
+</div><div class="mobi_quick_buttons mobile">
+    <div>
+        <a href="#" class="fl_box-1374826386773" title="Email Form">Email</a><div style="display:none">
+            <div id="form-lightbox-1374826386773" style="">
+                <div class="show_finance_form showthis">
+                    <div role="form" class="wpcf7" id="wpcf7-f3-o2" dir="ltr">
+                        <div class="screen-reader-response"></div>
+                        <form action="/showroom/maserati/levante/25928188/#wpcf7-f3-o2" method="post" class="wpcf7-form" novalidate="novalidate">
+                            <div style="display: none;">
+                                <input type="hidden" name="_wpcf7" value="3" />
+                                <input type="hidden" name="_wpcf7_version" value="5.1.6" />
+                                <input type="hidden" name="_wpcf7_locale" value="" />
+                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3-o2" />
+                                <input type="hidden" name="_wpcf7_container_post" value="0" />
+                                <input type="hidden" name="g-recaptcha-response" value="" />
+                            </div>
+                            <p>
+                                Name<br />
+                                <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name" /></span>
+                            </p>
+                            <p>
+                                Email<br />
+                                <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Preferred Email Address" /></span>
+                            </p>
+                            <p>
+                                Number<br />
+                                <span class="wpcf7-form-control-wrap tel-122"><input type="tel" name="tel-122" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Preferred Contact Number" /></span>
+                            </p>
+                            <p>
+                                Subject<br />
+                                <span class="wpcf7-form-control-wrap menu-116"><select name="menu-116" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false"><option value="Vehicle Enquiry">Vehicle Enquiry</option><option value="Book a Test Drive">Book a Test Drive</option></select></span>
+                            </p>
+                            <p>
+                                Your Message<br />
+                                <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your Message..."></textarea></span>
+                            </p>
+
+                            <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+                            <p>&nbsp;</p>
+                            <div class="wpcf7-response-output wpcf7-display-none"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<script type="text/javascript">
+                var iFrame_1374826386773 = jQuery("#form-lightbox-1374826386773 iframe").attr("src");
+                jQuery(document).ready(function () {
+                    jQuery(".fl_box-1374826386773").colorbox({
+                        inline: true,
+                        href: "#form-lightbox-1374826386773",
+                        transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                        onClosed: function () { jQuery("#form-lightbox-1374826386773 iframe").attr("src", iFrame_1374826386773); }
+                    });
+                });
+            </script>*@
+    </div>
+    <div id="tab01" class="tab-contents">
+        <div class="middle">
+            <a href="#" class="fl_box-this_finance_form_foot" title="Finance Calculator">Finance Calc</a><div style="display:none">
+                <div id="form-lightbox-this_finance_form_foot" style="">
+                    <div class="show_finance_form showthis">
+                        <div class="fincalc" style="width:100% !important;">
+                            <form id="financeCalculator" action="" method="POST">
+                                <div class="header">
+                                    <h3>The Monthly Repayment will be: <span class="total_amount">R 0.00</span></h3>
+                                    <div>
+                                        <div class="finance_ammount_header">
+                                            <span>Finance Ammount:</span>
+                                            <span class="finance_ammounts totals">R 0.00</span>
+                                        </div>
+                                        <hr>
+                                        <div class="total_paid_header">
+                                            <span>Total paid over contract period:</span>
+                                            <span class="total_paid_ammounts totals">R 0.00</span>
+                                        </div>
+                                        <hr>
+                                        <div class="balloon_payment_header">
+                                            <span>Balloon Payment:</span>
+                                            <span class="balloon_payment_ammounts totals">R 0.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input_fields">
+                                    <div class="left">
+                                        <span>Vehicle Purchase Price:</span>
+                                        <input type="text" name="purchase_price" maxlength="7" class="purchase_price" placeholder="Total Value of the Vehicle">
+                                        <span>Repayment period:</span>
+                                        <select name="repayment_period" class="repayment_period disabled" disabled>
+                                            <option value="12">12 Months</option>
+                                            <option value="24">24 Months</option>
+                                            <option value="36">36 Months</option>
+                                            <option value="48">48 Months</option>
+                                            <option value="54">54 Months</option>
+                                            <option value="60" selected="selected">60 Months</option>
+                                            <option value="72">72 Months</option>
+                                        </select>
+                                        <span>Deposit:</span>
+                                        <select name="deposit_percent" class="deposit_percent disabled" disabled>
+                                            <option value="0" selected="selected">0%</option>
+                                            <option value="10">10%</option>
+                                            <option value="15">15%</option>
+                                            <option value="20">20%</option>
+                                            <option value="25">25%</option>
+                                            <option value="30">30%</option>
+                                            <option value="35">35%</option>
+                                            <option value="40">40%</option>
+                                            <option value="45">45%</option>
+                                            <option value="50">50%</option>
+                                        </select>
+                                        <div class="or_option">
+                                            <span>or</span>
+                                            <input type="text" name="deposit_ammount" class="deposit_ammount disabled" placeholder="Please put in a preferred amount" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <span>Balloon Payment:</span>
+                                        <select name="balloon_payment" class="balloon_payment disabled" disabled>
+                                            <option value="0" selected="selected">0%</option>
+                                            <option value="5">5%</option>
+                                            <option value="10">10%</option>
+                                            <option value="15">15%</option>
+                                            <option value="20">20%</option>
+                                            <option value="25">25%</option>
+                                            <option value="30">30%</option>
+                                            <option value="35">35%</option>
+                                            <option value="40">40%</option>
+                                            <option value="45">45%</option>
+                                            <option value="50">50%</option>
+                                            <option value="55">55%</option>
+                                            <option value="60">60%</option>
+                                            <option value="65">65%</option>
+                                        </select>
+                                        <span>Anticipated interest rate:</span>
+                                        <select name="interest_rate" class="interest_rate disabled" disabled>
+                                            <option value="07">7.00%</option>
+                                            <option value="0725">7.25%</option>
+                                            <option value="075">7.50%</option>
+                                            <option value="0775">7.75%</option>
+                                            <option value="08">8.00%</option>
+                                            <option value="0825">8.25%</option>
+                                            <option value="085">8.50%</option>
+                                            <option value="0875">8.75%</option>
+                                            <option value="09">9.00%</option>
+                                            <option value="0925">9.25%</option>
+                                            <option value="095">9.50%</option>
+                                            <option value="0975">9.75%</option>
+                                            <option value="1">10.00%</option>
+                                            <option value="1025">10.25%</option>
+                                            <option value="105">10.50%</option>
+                                            <option value="1075">10.75%</option>
+                                            <option value="11">11.00%</option>
+                                            <option value="1125">11.25%</option>
+                                            <option value="115">11.50%</option>
+                                            <option value="1175">11.75%</option>
+                                            <option value="12" selected="selected">12.00%</option>
+                                            <option value="1225">12.25%</option>
+                                            <option value="125">12.50%</option>
+                                            <option value="1275">12.75%</option>
+                                            <option value="13">13.00%</option>
+                                            <option value="1325">13.25%</option>
+                                            <option value="135">13.50%</option>
+                                            <option value="1375">13.75%</option>
+                                            <option value="14">14.00%</option>
+                                            <option value="1425">14.25%</option>
+                                            <option value="145">14.50%</option>
+                                            <option value="1475">14.75%</option>
+                                            <option value="15">15.00%</option>
+                                            <option value="1525">15.25%</option>
+                                            <option value="155">15.50%</option>
+                                            <option value="1575">15.75%</option>
+                                            <option value="16">16.00%</option>
+                                            <option value="1625">16.25%</option>
+                                            <option value="165">16.50%</option>
+                                            <option value="1675">16.75%</option>
+                                            <option value="17">17.00%</option>
+                                            <option value="1725">17.25%</option>
+                                            <option value="175">17.50%</option>
+                                            <option value="1775">17.75%</option>
+                                            <option value="18">18.00%</option>
+                                            <option value="1825">18.25%</option>
+                                            <option value="185">18.50%</option>
+                                            <option value="1875">18.75%</option>
+                                            <option value="19">19.00%</option>
+                                            <option value="1925">19.25%</option>
+                                            <option value="195">19.50%</option>
+                                            <option value="1975">19.75%</option>
+                                            <option value="20">20.00%</option>
+                                            <option value="2025">20.25%</option>
+                                            <option value="205">20.50%</option>
+                                            <option value="2075">20.75%</option>
+                                            <option value="21">21.00%</option>
+                                        </select>
+                                        <p><b>Disclaimer:</b> All calculations made on this calculator, together with rates quoted, are guidelines only and subject to confirmation at the time of finalising any transaction with your preferred vehicle financing company.</p>
+                                    </div>
+                                </div>
+                                <div class="apply_button">
+                                    <input type="button" value="Apply for finance" name="redirect_button" class="redirect_button" onclick="window.location.href='https://www.theautoagents.co.za/finance/'">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<script type="text/javascript">
+                    var iFrame_this_finance_form_foot = jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src");
+                    jQuery(document).ready(function () {
+                        jQuery(".fl_box-this_finance_form_foot").colorbox({
+                            inline: true,
+                            href: "#form-lightbox-this_finance_form_foot",
+                            transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                            onClosed: function () { jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src", iFrame_this_finance_form_foot); }
+                        });
+                    });
+                </script>*@
+        </div>
+    </div>
+    <div><a href="https://www.theautoagents.co.za/contact-us/#visitmap">Visit Dealer</a></div>
+</div>
+
+<div class="tab-content">
+    <!------------ tab-pathology-general ------------->
+    <div role="tabpanel" class="tab-pane active" id="pathology_general">
+        <br />
+        <div class="row">
+            <table class="table pathology-clinical-table" id="pathology_general_table">
+                <thead>
+                    <tr>
+                        <th class="iSeriesTH" style="width: 30%"></th>
+                        <th style="text-align: center!important; width: 30%">
+                            Path date
+                        </th>
+                        <th style="text-align: center!important; width: 30%">
+                            Pathology value
+                        </th>
+                    </tr>
+                </thead>
+
+            </table>
+            <br />
+
+        </div>
+    </div>
+
+ </div>
+
+
+
+
+
+    @section scripts{
+
+
+        <script>
+            $(document).ready(function () {
+                $("#content-slider").lightSlider({
+                    loop: true,
+                    keyPress: true
+                });
+                $('#image-gallery').lightSlider({
+                    gallery: true,
+                    item: 1,
+                    thumbItem: 9,
+                    slideMargin: 0,
+                    speed: 500,
+                    auto: true,
+                    loop: true,
+                    onSliderLoad: function () {
+                        $('#image-gallery').removeClass('cS-hidden');
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function ($) {
+                $('#at_gallery').royalSlider({
+                    fullscreen: {
+                        enabled: false,
+                        nativeFS: false
+                    },
+                    controlNavigation: 'thumbnails',
+                    autoScaleSlider: true,
+                    autoScaleSliderWidth: 960,
+                    autoScaleSliderHeight: 850,
+                    loop: true,
+                    imageScaleMode: 'fit-if-smaller',
+                    navigateByClick: true,
+                    numImagesToPreload: 2,
+                    arrowsNav: true,
+                    arrowsNavAutoHide: true,
+                    arrowsNavHideOnTouch: true,
+                    keyboardNavEnabled: true,
+                    fadeinLoadedSlide: true,
+                    globalCaption: true,
+                    globalCaptionInside: true,
+                    autoPlay: {
+                        enabled: true,
+                        pauseOnHover: true,
+                        delay: 3000
+                    },
+                    thumbs: {
+                        appendSpan: true,
+                        firstMargin: true,
+                        paddingBottom: 4
+                    }
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            var iFrame_this_finance_form_foot = jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src");
+            jQuery(document).ready(function () {
+                jQuery(".fl_box-this_finance_form_foot").colorbox({
+                    inline: true,
+                    href: "#form-lightbox-this_finance_form_foot",
+                    transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                    onClosed: function () { jQuery("#form-lightbox-this_finance_form_foot iframe").attr("src", iFrame_this_finance_form_foot); }
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            var iFrame_1374826386773 = jQuery("#form-lightbox-1374826386773 iframe").attr("src");
+            jQuery(document).ready(function () {
+                jQuery(".fl_box-1374826386773").colorbox({
+                    inline: true,
+                    href: "#form-lightbox-1374826386773",
+                    transition: "1", speed: 350, scrolling: true, opacity: 0.85, returnFocus: true, fastIframe: true, closeBtn: true, escKey: true,
+                    onClosed: function () { jQuery("#form-lightbox-1374826386773 iframe").attr("src", iFrame_1374826386773); }
+                });
+            });
+        </script>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery(".wpcf7 input[name=vehicle_enquiry_id]").val('25928188');
+            });
+        </script>
+
+    }
+
+
